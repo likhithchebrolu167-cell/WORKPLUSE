@@ -1,0 +1,13 @@
+{
+  "name": "workpulse-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build",
+    "server": "cd server && node server.js",
+    "client": "cd client && npm run dev",
+    "publish:google": "npm run build && npx firebase-tools login && npx firebase-tools deploy --only hosting",
+    "deploy:vercel": "npm run build && cd client && npx vercel"
+  }
+}
