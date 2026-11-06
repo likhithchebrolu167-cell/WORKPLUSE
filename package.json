@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "start": "node server/server.js",
     "install:all": "cd server && npm install && cd ../client && npm install",
     "build": "cd client && npm run build",
+    "build:full": "cd client && npm install && npm run build && cd ../server && npm install",
     "server": "cd server && node server.js",
     "client": "cd client && npm run dev",
     "publish:google": "npm run build && npx firebase-tools login && npx firebase-tools deploy --only hosting",
